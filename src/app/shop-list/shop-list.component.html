@@ -1,0 +1,31 @@
+<section class="row">
+	<div class="col-md-12">
+        <span>
+            Sorting by:
+        </span>
+        <button (click)='SortByPrice()'>
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            Price
+        </button>
+            
+        <button (click)='SortByName()'>
+            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            Name
+        </button>
+	</div>
+</section>
+
+<section class="row">
+	<div class="col-md-12">
+        <shop-item class="col-md-3" *ngFor='let shop of shops' [shop]='shop' (edit)='EditItem(shop)' (delete)='DeleteItem(shop)'></shop-item>
+	</div>
+</section>
+
+<section class="row">
+	<div class="col-md-12">
+        <div class="edit-shop" *ngIf='isEditItem && editShop'>
+            <h2>Edit Item!</h2>
+        </div>
+	</div>
+</section>
+
