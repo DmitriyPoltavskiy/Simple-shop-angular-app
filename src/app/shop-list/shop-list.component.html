@@ -4,28 +4,43 @@
             Sorting by:
         </span>
         <button (click)='SortByPrice()'>
-            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            <i class="fa" [ngClass]="{ 'fa-arrow-up' : sortPriceUp, 'fa-arrow-down' : !sortPriceUp }" aria-hidden="true"></i>
             Price
         </button>
             
         <button (click)='SortByName()'>
-            <i class="fa fa-arrow-down" aria-hidden="true"></i>
+            <i class="fa" [ngClass]="{ 'fa-arrow-up' : sortNameUp, 'fa-arrow-down' : !sortNameUp }" aria-hidden="true"></i>
             Name
         </button>
 	</div>
+    <!--<div class="col-md-12">
+        <button (click)="AddItem()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add new item
+        </button>
+    </div>-->
 </section>
 
 <section class="row">
 	<div class="col-md-12">
-        <shop-item class="col-md-3" *ngFor='let shop of shops' [shop]='shop' (edit)='EditItem(shop)' (delete)='DeleteItem(shop)'></shop-item>
+        <shop-item class="col-md-3 col-sm-6 col-xs-6" *ngFor='let shop of shops' [shop]='shop' (edit)='EditItem(shop)' (delete)='DeleteItem(shop)'></shop-item>
 	</div>
 </section>
 
 <section class="row">
 	<div class="col-md-12">
-        <div class="edit-shop" *ngIf='isEditItem && editShop'>
+        <!--<div class="edit-shop" *ngIf="listState == 'STATE_ADD'">-->
+        <!--<div class="edit-shop" *ngIf='editShop'>-->
+            <!--<form (submit)="Create()">
+                Name: <input type="text">
+                Price: <input type="text">
+                ImageUrl: <input type="text">
+                <button type="submit">
+                    
+                </button>
+            </form>
             <h2>Edit Item!</h2>
-        </div>
+        </div>-->
 	</div>
 </section>
 

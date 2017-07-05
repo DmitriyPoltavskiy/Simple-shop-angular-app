@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // import { MdButtonModule, MdCheckboxModule } from '@angular/material';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
 		BrowserModule,
 		// MdButtonModule, 
 		// MdCheckboxModule,
-		// FormsModule,
+		FormsModule,
 		// HttpModule
 	],
 	// providers: [],

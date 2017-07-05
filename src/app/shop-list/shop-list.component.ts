@@ -11,33 +11,34 @@ import { Shop } from '../shared/Shop';
 
 export class ShopListComponent {
 	shops:Shop[] = shopsData;
-	isEditItem:boolean = false;
 	editShop:Shop = null;
 
+	sortPriceUp:boolean = false;
+	sortNameUp:boolean = false;
+
 	SortByPrice() {
-		this.shops.sort(this.comparePrices)
-	}
-
-	comparePrices(a, b) {
-		// return b.price - a.price;
-		return a.price - b.price;
-	}
-
-	compareNames(a, b) {
-		if(a.name > b.name)
-			return 1;
-		else if(a.name < b.name)
-			return -1;
+		if(this.sortPriceUp)
+			this.shops.sort(this.comparePricesUp);
 		else 
-			return 0;
+			this.shops.sort(this.comparePricesDown);
+
+		this.sortPriceUp = !this.sortPriceUp;
 	}
 
 	SortByName() {
-		this.shops.sort(this.compareNames)
+		if(this.sortNameUp)
+			this.shops.sort(this.compareNamesUp)
+		else 
+			this.shops.sort(this.compareNamesDown)
+			
+		this.sortNameUp = !this.sortNameUp;
+	}
+
+	AddItem() {
+		console.log("add");
 	}
 
 	EditItem(shop:Shop) {
-		this.isEditItem = true;
 		this.editShop = shop;
 		console.log(shop.name);
 	}
@@ -48,5 +49,29 @@ export class ShopListComponent {
 		if(index > -1) {
 			this.shops.splice(index, 1)	
 		}
+	}
+
+	comparePricesUp(a, b) {
+		return b.price - a.price;
+	}
+
+	comparePricesDown(a, b) {
+		return a.price - b.price;
+	}
+	
+	compareNamesUp(a, b) {
+		if(a.name > b.name)
+			return 1;
+		else if(a.name < b.name)
+			return -1;
+		return 0;
+	}
+
+	compareNamesDown(a, b) {
+		if(b.name > a.name)
+			return 1;
+		else if(a.name < b.name)
+			return -1;
+		return 0;
 	}
 }
