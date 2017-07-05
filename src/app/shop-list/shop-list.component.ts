@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { shopsData } from '../shared/shopsData';
-// import { Shop } from '../shared/Shop';
+import { Shop } from '../shared/Shop';
 
 @Component({
 	moduleId: module.id,
@@ -10,39 +10,39 @@ import { shopsData } from '../shared/shopsData';
 })
 
 export class ShopListComponent {
-	shops = shopsData;
+	shops:Shop[] = shopsData;
 	isEditItem:boolean = false;
-	editShop = null;
+	editShop:Shop = null;
 
 	SortByPrice() {
 		this.shops.sort(this.comparePrices)
-		console.log('Sort by price');
 	}
 
 	comparePrices(a, b) {
+		// return b.price - a.price;
 		return a.price - b.price;
 	}
 
 	compareNames(a, b) {
 		if(a.name > b.name)
 			return 1;
-		if(a.name < b.name)
+		else if(a.name < b.name)
 			return -1;
-		return 0;
+		else 
+			return 0;
 	}
 
 	SortByName() {
 		this.shops.sort(this.compareNames)
-		console.log('Sort by name');
 	}
 
-	EditItem(shop) {
+	EditItem(shop:Shop) {
 		this.isEditItem = true;
 		this.editShop = shop;
 		console.log(shop.name);
 	}
 
-	DeleteItem(shop) {
+	DeleteItem(shop:Shop) {
 		let index = this.shops.indexOf(shop);
 
 		if(index > -1) {
