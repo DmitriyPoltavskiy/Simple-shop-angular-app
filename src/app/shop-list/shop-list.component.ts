@@ -35,6 +35,10 @@ export class ShopListComponent {
 	}
 
 	AddItem() {
+		let newItem:Shop = new Shop("", "", "");
+		newItem.isEdit = true;
+		this.shops.unshift(newItem);
+
 		console.log("add");
 	}
 

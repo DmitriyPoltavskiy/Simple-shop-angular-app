@@ -9,7 +9,6 @@ import { Shop } from '../shared/Shop';
 })
 
 export class ShopItemComponent {
-  isEdit = false;
 
   newShopName:string;
   newShopPrice:string;
@@ -23,7 +22,7 @@ export class ShopItemComponent {
     this.newShopName = '';
     this.newShopPrice = '';
 
-    this.isEdit = false;
+    shop.isEdit = false;
   }
 
   @Input() shop;
@@ -35,7 +34,7 @@ export class ShopItemComponent {
     this.newShopPrice = this.shop.price;
     this.newShopImageUrl = this.shop.imageUrl;
 
-    this.isEdit = true;
+    this.shop.isEdit = true;
     this.edit.emit();
   }
 
