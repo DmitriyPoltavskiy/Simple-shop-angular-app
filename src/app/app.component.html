@@ -1,12 +1,27 @@
-<header class="header row">
-	<div class="col-md-12">
-		<h1 class="title">
-			{{title}}
-		</h1>
+<header class="header container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="title">
+				{{title}}
+			</h1>
+		</div>
 	</div>
 </header>
-<a routerLink="/home" routerLinkActive="active">home</a>
+
+<!--<a routerLink="/item" routerLinkActive="active">home</a>-->
 <!--<shop-list></shop-list>-->
-<router-outlet>
+<router-outlet class="content">
 
 </router-outlet>
+
+<footer class="footer container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="footer-content">
+				<p>
+					&copy; Made by Dmitriy Poltavskiy
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>

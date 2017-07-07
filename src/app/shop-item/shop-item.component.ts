@@ -5,7 +5,7 @@ import { Shop } from '../shared/Shop';
 	moduleId: module.id,
 	selector: 'shop-item',
 	templateUrl: 'shop-item.component.html',
-	styleUrls: ['shop-item.component.css']
+	styleUrls: ['shop-item.component.scss']
 })
 
 export class ShopItemComponent {

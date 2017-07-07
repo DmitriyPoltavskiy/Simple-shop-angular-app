@@ -23,6 +23,42 @@ export const shopsData = [
 		imageUrl: 'https://is2-ssl.mzstatic.com/image/thumb/Purple111/v4/d8/78/24/d87824f8-4468-d5c1-3835-19971af4e809/source/256x256bb.jpg',
 		isEdit: false
 	},
+	{
+		name: 'Shop 1',
+        price: '15',
+		imageUrl: 'https://is2-ssl.mzstatic.com/image/thumb/Purple111/v4/d8/78/24/d87824f8-4468-d5c1-3835-19971af4e809/source/256x256bb.jpg',
+		isEdit: false
+	},
+	{
+		name: 'Shop 1',
+        price: '15',
+		imageUrl: 'https://is2-ssl.mzstatic.com/image/thumb/Purple111/v4/d8/78/24/d87824f8-4468-d5c1-3835-19971af4e809/source/256x256bb.jpg',
+		isEdit: false
+	},
+	{
+		name: 'Shop 1',
+        price: '15',
+		imageUrl: 'https://is2-ssl.mzstatic.com/image/thumb/Purple111/v4/d8/78/24/d87824f8-4468-d5c1-3835-19971af4e809/source/256x256bb.jpg',
+		isEdit: false
+	},
+	{
+		name: 'Shop 1',
+        price: '15',
+		imageUrl: 'https://is2-ssl.mzstatic.com/image/thumb/Purple111/v4/d8/78/24/d87824f8-4468-d5c1-3835-19971af4e809/source/256x256bb.jpg',
+		isEdit: false
+	},
+	{
+		name: 'Shop 1',
+        price: '15',
+		imageUrl: 'https://is2-ssl.mzstatic.com/image/thumb/Purple111/v4/d8/78/24/d87824f8-4468-d5c1-3835-19971af4e809/source/256x256bb.jpg',
+		isEdit: false
+	},
+	{
+		name: 'Shop 1',
+        price: '15',
+		imageUrl: 'https://is2-ssl.mzstatic.com/image/thumb/Purple111/v4/d8/78/24/d87824f8-4468-d5c1-3835-19971af4e809/source/256x256bb.jpg',
+		isEdit: false
+	},
 	// {
 	// 	name: 'Shop 5',
     //     price: '5',

@@ -1,0 +1,84 @@
+.shop-item {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    position: relative;
+    margin-bottom: 25px;
+    background-color: #fff;
+
+    .image-container {
+        position: relative;
+        
+        .image {
+            width: 100%;
+        }
+        .image-url-block {
+            position: absolute;
+            right: -1px;
+            left: -1px;
+            bottom: -10px;
+
+            .image-input, .image-input-span {
+                border-radius: 0;
+            }
+        }
+    }
+
+    .buttons {
+        position: absolute;
+        right: 10px;
+        top: -20px;
+        transition: all 0.3s;
+
+        .edit-button, .delete-button {
+            padding: 5px 10px;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+        .buttons {
+            top: 10px;
+            transition: all 0.3s;
+
+            .edit-button, .delete-button {
+                transition: all 0.3s;
+                opacity: 1;
+            }
+        }
+    }
+
+    input {
+        text-align: center;
+    }
+
+    .name-input {
+        font-size: 22px;
+    }
+
+    .price-input {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .content-container {
+        padding: 20px 15px;
+
+        h3 {
+            margin: 0 0 10px;
+            font-size: 24px;
+            color: #424242;
+        }
+
+        h4 {
+            margin: 0;
+            color: #757575;
+        }
+
+        input {
+            display: inline-block;
+        }
+    }
+}
