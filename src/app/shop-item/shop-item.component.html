@@ -1,47 +1,55 @@
 <div class="shop-item">
-	<div class="image-container">
-		<div class="buttons">
-			<button (click)="OnEdit();" class="edit-button btn btn-default">
-				<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-			</button>
-			<button (click)="OnDelete()" class="delete-button btn btn-default">
-				<i class="fa fa-times" aria-hidden="true"></i>
-			</button>
+	<div class="main-container">
+		<div class="image-container">
+			<div class="buttons">
+				<button (click)="OnEdit();" class="edit-button btn btn-default">
+					<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+				</button>
+				<button (click)="OnDelete()" class="delete-button btn btn-default">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</button>
+			</div>
+			<img class="image" src="{{ shop.imageUrl }}" alt="coffee">
+			<p class="image-url-block">
+				<span *ngIf="shop.isEdit">
+					<div class="input-group">
+						<span class="image-input-span input-group-addon" id="url">Url:</span>
+						<input type="text" class="image-input form-control" [(ngModel)]="newShopImageUrl" aria-describedby="url">
+					</div>
+				</span>
+			</p>
 		</div>
-		<img class="image" src="{{ shop.imageUrl }}" alt="coffee">
-		<p class="image-url-block">
-			<span *ngIf="shop.isEdit">
-				<div class="input-group">
-					<span class="image-input-span input-group-addon" id="url">Url:</span>
-					<input type="text" class="image-input form-control" [(ngModel)]="newShopImageUrl" aria-describedby="url">
-				</div>
-			</span>
-		</p>
+		<section class="content-container">
+			<header class="header">
+				<h3>
+					<span class="name-value" *ngIf="!shop.isEdit">
+						{{ shop.name }}
+					</span>
+					<input type="text" *ngIf="shop.isEdit" class="name-input form-control" value="{{ shop.name }}"  [(ngModel)]="newShopName">
+				</h3>
+				<h4>
+					<span class="price-value" *ngIf="!shop.isEdit">
+						Price: 
+						{{ shop.price }}
+					</span>
+					<input type="text" *ngIf="shop.isEdit" class="price-input form-control" value="{{ shop.price }}"  [(ngModel)]="newShopPrice">
+				</h4>
+			</header>
+
+			<main class="description">
+				<p class="description-text">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse blanditiis sunt corporis aut incidunt possimus eligendi, veritatis tempore officia doloribus harum sed quo unde hic quia aspernatur, ad, neque inventore.
+				</p>
+			</main>
+			
+			<footer *ngIf="shop.isEdit" class="">
+				<button (click)="Save(shop)" class="btn btn-primary">
+					Save
+				</button>
+				<button (click)="CancelSave(shop);" class="btn btn-default">
+					Cancel
+				</button>
+			</footer>
+		</section>
 	</div>
-	<section class="content-container">
-		<header class="header">
-			<h3>
-				<span class="name-value" *ngIf="!shop.isEdit">
-					{{ shop.name }}
-				</span>
-				<input type="text" *ngIf="shop.isEdit" class="name-input form-control" value="{{ shop.name }}"  [(ngModel)]="newShopName">
-			</h3>
-			<h4>
-				<span class="price-value" *ngIf="!shop.isEdit">
-					Price: 
-					{{ shop.price }}
-				</span>
-				<input type="text" *ngIf="shop.isEdit" class="price-input form-control" value="{{ shop.price }}"  [(ngModel)]="newShopPrice">
-			</h4>
-		</header>
-		
-		<footer *ngIf="shop.isEdit" class="">
-			<button (click)="Save(shop)" class="btn btn-primary">
-				Save
-			</button>
-			<button (click)="CancelSave(shop);" class="btn btn-default">
-				Cancel
-			</button>
-		</footer>
-	</section>
 </div>

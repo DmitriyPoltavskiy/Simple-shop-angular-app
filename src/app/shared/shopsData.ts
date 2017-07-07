@@ -2,7 +2,7 @@ export const shopsData = [
 	{
 		name: 'Shop 4',
         price: '10',
-   		imageUrl: 'http://www.free-icons-download.net/images/java-coffee-14303.png',
+   		imageUrl: 'https://images-na.ssl-images-amazon.com/images/I/61Q8iwQQK2L._CR150,0,900,900_UX256.jpg',
 		isEdit: false
 	},
 	{
