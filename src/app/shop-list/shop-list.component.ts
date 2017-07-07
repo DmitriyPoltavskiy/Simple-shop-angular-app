@@ -27,7 +27,7 @@ export class ShopListComponent {
 
 	SortByName() {
 		if(this.sortNameUp)
-			this.shops.sort(this.compareNamesUp)
+			this.shops.sort(this.compareNamesUp) 
 		else 
 			this.shops.sort(this.compareNamesDown)
 			
@@ -35,11 +35,20 @@ export class ShopListComponent {
 	}
 
 	AddItem() {
-		let newItem:Shop = new Shop("", "", "");
-		newItem.isEdit = true;
-		this.shops.unshift(newItem);
+		let isEdit:boolean = false;
+		for (var index = 0; index < this.shops.length; index++) {
+			var element = this.shops[index];
+			if(element.isEdit) {
+				isEdit = true;
+				break;
+			}
+		}
 
-		console.log("add");
+		if(!isEdit) {
+			let newItem:Shop = new Shop("", "", "");
+			newItem.isEdit = true;
+			this.shops.unshift(newItem);
+		}
 	}
 
 	EditItem(shop:Shop) {
