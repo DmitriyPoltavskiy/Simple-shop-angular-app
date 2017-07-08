@@ -42,7 +42,7 @@ export class ShopItemComponent {
 		this.newShopPrice = this.shop.price;
 		this.newShopImageUrl = this.shop.imageUrl;
 
-		this.shop.isEdit = true;
+		this.shop.isEdit = !this.shop.isEdit;
 		this.edit.emit();
 	}
 
